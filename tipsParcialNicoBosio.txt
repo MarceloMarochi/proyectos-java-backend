@@ -1,0 +1,176 @@
+--------BASES DE DATOS---------
+Usando DriverManager, connection,...
+
+-Creo una clase que se llama "GestorBase" que tiene la definición de los atributos que se necesitan para iniciar la base, y los métodos para hacer inserciones y consultas:
+
+public class GestorBase {
+    private Connection conexion;
+
+    private String driver;
+    private String url;
+    private String user;
+    private String pass;
+
+
+// CONSTRUCTOR
+    public GestorBase(String driver, String url, String user, String pass) throws SQLException, ClassNotFoundException {
+        this.driver = driver;
+        this.url = url;
+        this.user = user;
+        this.pass = pass;
+
+// Crear la conexión - dentro del constructor
+    this.conexion = DriverManager.getConnection(url, user, pass);
+    Class.forName(driver);
+
+    validarConexion(conexion);
+    }
+
+    public GestorBase() {}
+
+
+// Chequear que la conexión se haya hecho
+public void validarConexion(Connection conexion) throws SQLException {
+        if(!conexion.isClosed()) {
+            System.out.println("Conexión exitosa");
+        } else {
+            System.out.println("Error en la conexion!");
+        }
+    }
+
+    // Instertar un objeto de tipo Alumno a la base de datos - asi con todas las tablas
+    public void cargarDB(Alumno alumno) throws SQLException {
+        String insertQuery = "INSERT INTO alumno (dni, nombre, apellido, curso) VALUES (?, ?, ?, ?)";
+
+        try (Connection connection = DriverManager.getConnection("jdbc:h2:~/first_h2_db", "sa", "")) {
+            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+
+            preparedStatement.setInt(1, alumno.getDni());
+            preparedStatement.setString(2, alumno.getNombre());
+            preparedStatement.setString(3, alumno.getApellido());
+            preparedStatement.setString(4, alumno.getCurso());
+
+            int filasInsertadas = preparedStatement.executeUpdate();
+
+            if (filasInsertadas > 0) {
+                System.out.println(alumno.getNombre() + " (DNI " + alumno.getDni() + ") Insertado correctamente a la BD");
+            } else {
+                System.out.println("Error al insertar el alumno!");
+            }
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+// Mostrar TODOS los registros de una tabla - SELECT *
+    public void mostrarRegistros() throws SQLException {
+        Statement estado = this.conexion.createStatement();
+
+        String selectQuery = "SELECT * FROM alumno";
+        ResultSet resultado = estado.executeQuery(selectQuery);
+
+        System.out.println("Datos de la tabla Alumno:");
+        while (resultado.next()) {
+            int dni = resultado.getInt("dni");
+            String nombre = resultado.getString("nombre");
+            String apellido = resultado.getString("apellido");
+            String curso = resultado.getString("curso");
+
+            System.out.println("DNI: " + dni + " | NOMBRE: " + nombre + " | APELLIDO: " + apellido + " | CURSO: " + curso);
+        }
+    }
+
+// Al final del Main se debe poner el método GestorBase.cerrarConexion()
+    public void cerrarConexion() throws SQLException {
+        this.conexion.close();
+    }
+
+
+EJEMPLO MAIN
+
+public class Principal {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        String driver = "org.h2.Driver"; // siempre
+        String url = "jdbc:h2:~/first_h2_db"; // revisar el las propiedades de la BD o en la ubicación de la BD dentro del proyeecto
+        String user = ""; // no va a tener
+        String pass = ""; // no va a tener
+
+        // creo el gestor de BD, la conexion y controlo que se haya creado
+        GestorBase gestorBase = new GestorBase(driver, url, user, pass);
+
+        // Muestro todos los registros
+        gestorBase.mostrarRegistros();
+
+        // Cierro la conexion a la BD
+        gestorBase.cerrarConexion();
+    }
+}
+
+
+---------LECTOR DE CSV---------
+
+Todo dentro de una clase "LectorDeArchivo" o de CSV
+
+public class FileReaderTXT {}
+
+// Devuelve una lista con TODOS los objetos creados a partir del archivo
+public ArrayList<ObjetoDelResultado> readTxt() throws FileNotFoundException {
+        String path = "src/test/resources/REPOSITORIES.txt";
+        String line = ""; // linea que estoy iterando
+        boolean isFirstLine = true;
+        String mensaje = "No funciono";
+        ArrayList<ObjetoDelResultado> resultado = new ArrayList<>();
+        int cont = 0;
+        ObjetoDelResultado repo = new ObjetoDelResultado();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while ((line = br.readLine()) != null) {
+                
+		// Por si la primera línea es un encabezado que no nos importa:
+		if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+                try {
+                    res = processLine(line);
+                } catch (NumberFormatException error){
+                    System.out.println(cont);
+                }
+                resultado.add(res);
+                cont++;
+            }
+        } catch (IOException e) {
+            throw new FileNotFoundException(e.toString());
+        }
+        return resultado;
+    }
+
+// Devuelve un objeto de la clase que queremos, que se va a añadir a la lista de todos los objetos en readTxt()
+private ObjetoDelResultado processLine(String line) {
+        String[] splitLine = line.split("\\|"); // separador, que puede ser una coma ("\\,")
+        
+	// Atributos de la clase que vamos a crear
+	String userName = splitLine[1];
+        String repositoryName = splitLine[2];
+        String description = splitLine[3];
+        String lastUpdated = splitLine[4];
+        ArrayList<Language> languages = getLanguages(splitLine[5].split(",")); // llama a otro método porque el en CSV hay muchos lenguajes, el método permite agregarlos a un sub-vector y lo añada al objeto
+        double star = Double.parseDouble(splitLine[6]); // "6.4"
+        ArrayList<Tag> tags = getTags(splitLine[7].split(","));
+        String url = splitLine[8];
+        User user = new User(userName);
+        
+	return new ObjetoDelResultado(userName, repositoryName, description, lastUpdated, star, url, languages, tags, user);
+    }
+
+// Cuando la relacióne es de 1 a muchos usamos estos dos métodos, por ej, que va a devolver un objeto con las instancias de cada clase creadas, que luego se meten a la intancia del objeto principal sin problema
+    
+    private ArrayList<Language> getLanguages(String[] linea) {
+        return Arrays.stream(linea)
+                .map(Language::new)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    private ArrayList<Tag> getTags(String[] linea) {
+        return Arrays.stream(linea).map(Tag::new).collect(Collectors.toCollection(ArrayList::new));
+    }
