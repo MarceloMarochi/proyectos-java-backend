@@ -1,0 +1,19 @@
+,15,524.6
+Assembly,1,24.4
+C,3,92.19999999999999
+C++,4,179.70000000000002
+CSS,3,99.69999999999999
+CoffeeScript,1,37.8
+Go,4,121.6
+HTML,3,101.2
+Java,3,70.6
+JavaScript,40,1738.1
+Objective-C,1,29.4
+PHP,1,32.9
+Python,9,248.5
+Ruby,4,117.1
+Rust,1,22.3
+Script de Vim,1,23.2
+Shell,1,55.2
+Swift,1,24.1
+TypeScript,4,108.2

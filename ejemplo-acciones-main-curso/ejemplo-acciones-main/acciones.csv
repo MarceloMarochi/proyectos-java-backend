@@ -1,0 +1,17 @@
+# Tabla: Activos
+activo_id,nombre_activo,tipo
+1,AAPL,Acción
+2,TSLA,Acción
+3,BTC,Cripto
+
+# Tabla: Usuarios
+usuario_id,nombre,email
+1,Juan,juan@example.com
+2,Ana,ana@example.com
+3,Carlos,carlos@example.com
+
+# Tabla: Transacciones
+transaccion_id,usuario_id,activo_id,tipo_transaccion,cantidad,fecha
+1,1,1,Compra,10,2023-01-15
+2,2,2,Venta,5,2023-02-20
+3,3,3,Compra,1,2023-03-10

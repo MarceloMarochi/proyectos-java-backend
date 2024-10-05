@@ -29,10 +29,12 @@ public class Menu {
         this(sc, question, "q",items, "q - Quit / Salir." );
     }
 
+    // Muestra la pregunta principal del menú.
     private void printQuestion() {
         System.out.println(question);
     }
 
+    // Muestra las diferentes opciones disponibles.
     private void printOptions() {
         for (MenuItem item : items) {
             System.out.println(item.getKey() + ": " + item.getTitle());
@@ -40,10 +42,12 @@ public class Menu {
         System.out.println(exitKey + ": " + exitTitle);
     }
 
+    // Lee la opción ingresada por el usuario.
     private String getSelection() {
         return sc.nextLine();
     }
 
+    // Busca el MenuItem correspondiente a la clave seleccionada.
     private MenuItem getItem(String key) {
         for (MenuItem item : items) {
             if (item.getKey().equals(key)) {
@@ -53,6 +57,7 @@ public class Menu {
         return null;
     }
 
+    // Ejecuta el ciclo del menú hasta que se selecciona la opción de salida.
     public void run() {
         while (true) {
             printQuestion();
@@ -75,6 +80,7 @@ public class Menu {
         }
     }
 
+    // Ejemplos estáticos con menus internos
     private static void opA(Scanner sc) {
         MenuItem[] ops = {
                 new MenuItem("1", "Opción 1") {

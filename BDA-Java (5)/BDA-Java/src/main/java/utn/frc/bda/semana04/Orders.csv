@@ -1,0 +1,501 @@
+Customer_ID,Customer_Name,City_ID,City,Order_ID,Order_Date,Product_ID,Product_Name,Count,Price
+74,Amelia Wilderman,13,San Francisco,90,2023-09-04,6,Jacket,3,90
+78,Randal Kessler,2,Los Angeles,73,2023-12-06,45,Tennis Racquet,3,280
+11,Ms. Pam Fay,16,Fort Worth,59,2023-10-24,3,Shirt,3,35
+64,Lucia Schamberger-Lueilwitz I,22,Washington,36,2023-10-14,6,Jacket,4,90
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,43,Tennis Racquet,2,110
+54,Mr. Wallace Dicki,6,Philadelphia,8,2023-08-10,12,Backpack,5,60
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,24,Flash Drive,1,90
+97,Irving Shields,2,Los Angeles,58,2023-01-30,10,Backpack,1,35
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,20,Headset,1,25
+48,Lee Dicki,4,Houston,88,2023-10-29,8,Socks,3,8
+19,Joseph Douglas,6,Philadelphia,34,2023-02-07,41,Tennis Shoes,5,85
+86,Ida Herzog,15,Columbus,44,2023-06-11,17,Mouse,1,15
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,5,Jacket,1,60
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,1,Shirt,5,15
+11,Ms. Pam Fay,16,Fort Worth,77,2023-04-28,31,Cell Phone,4,250
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,30,Laptop Case,3,110
+31,Guillermo Schuster DVM,14,Indianapolis,75,2023-02-15,26,Laptop,5,870
+67,Ms. Yolanda Larkin,15,Columbus,1,2023-09-10,1,Shirt,2,15
+16,Tina Lang,3,Chicago,50,2024-01-01,8,Socks,2,8
+55,Ernest Senger III,18,Seattle,63,2023-09-22,11,Backpack,3,50
+78,Randal Kessler,2,Los Angeles,37,2023-09-24,4,Jacket,1,45
+100,Leland Wisoky,22,Washington,96,2023-06-17,26,Laptop,5,870
+11,Ms. Pam Fay,16,Fort Worth,11,2023-04-01,21,Headset,2,35
+88,Kelli Hills,15,Columbus,12,2023-06-23,7,Socks,3,5
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,20,Headset,3,25
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,19,Headset,1,12
+50,Kenneth Halvorson-Ward V,9,Dallas,29,2023-10-16,20,Headset,5,25
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,31,Cell Phone,4,250
+38,Eric Johns,17,Charlotte,81,2023-06-12,19,Headset,2,12
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,38,Espresso Machine,1,180
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,15,Keyboard,2,120
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,13,Keyboard,1,25
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,16,Mouse,2,8
+11,Ms. Pam Fay,16,Fort Worth,11,2023-04-01,5,Jacket,5,60
+11,Ms. Pam Fay,16,Fort Worth,59,2023-10-24,32,Cell Phone,5,330
+23,Marc Glover,12,Jacksonville,40,2023-05-18,38,Espresso Machine,4,180
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,28,Laptop Case,2,60
+88,Kelli Hills,15,Columbus,20,2023-12-13,22,Flash Drive,1,12
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,11,Backpack,3,50
+72,Glenda Goodwin,6,Philadelphia,32,2023-12-13,4,Jacket,4,45
+18,Lyle Gutkowski,4,Houston,38,2023-05-09,6,Jacket,2,90
+71,Gladys Towne,18,Seattle,33,2023-10-13,13,Keyboard,4,25
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,19,Headset,2,12
+99,Priscilla Yost,9,Dallas,35,2023-11-19,34,Coffee Machine,2,35
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,13,Keyboard,2,25
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,16,Mouse,1,8
+99,Priscilla Yost,9,Dallas,35,2023-11-19,13,Keyboard,1,25
+100,Leland Wisoky,22,Washington,71,2023-01-08,15,Keyboard,4,120
+99,Priscilla Yost,9,Dallas,79,2023-11-08,4,Jacket,1,45
+9,Norman Crooks,17,Charlotte,19,2023-05-17,27,Laptop,1,1200
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,29,Laptop Case,3,85
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,23,Flash Drive,4,50
+54,Mr. Wallace Dicki,6,Philadelphia,82,2023-06-16,10,Backpack,3,35
+32,Willard Cremin-Kunde,2,Los Angeles,53,2023-10-31,10,Backpack,2,35
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,18,Mouse,1,45
+93,Danielle King,16,Fort Worth,18,2023-09-17,36,Coffee Machine,2,90
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,43,Tennis Racquet,1,110
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,30,Laptop Case,2,110
+90,Alexandra Gerhold,9,Dallas,41,2023-10-29,19,Headset,5,12
+90,Alexandra Gerhold,9,Dallas,41,2023-10-29,39,Espresso Machine,5,480
+16,Tina Lang,3,Chicago,50,2024-01-01,13,Keyboard,5,25
+95,Marcus Will-Powlowski Jr.,16,Fort Worth,48,2023-07-10,38,Espresso Machine,4,180
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,21,Headset,4,35
+87,Gail Miller,24,Memphis,17,2023-11-25,10,Backpack,1,35
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,14,Keyboard,5,45
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,22,Flash Drive,5,12
+97,Irving Shields,2,Los Angeles,58,2023-01-30,5,Jacket,3,60
+15,Conrad Treutel,23,Boston,23,2023-01-16,39,Espresso Machine,5,480
+50,Kenneth Halvorson-Ward V,9,Dallas,39,2023-04-11,11,Backpack,3,50
+90,Alexandra Gerhold,9,Dallas,41,2023-10-29,29,Laptop Case,3,85
+31,Guillermo Schuster DVM,14,Indianapolis,75,2023-02-15,28,Laptop Case,5,60
+73,Tina Hirthe,20,El Paso,70,2023-03-07,43,Tennis Racquet,5,110
+88,Kelli Hills,15,Columbus,20,2023-12-13,34,Coffee Machine,3,35
+54,Mr. Wallace Dicki,6,Philadelphia,82,2023-06-16,11,Backpack,1,50
+22,Willard Walter,16,Fort Worth,51,2023-01-24,24,Flash Drive,4,90
+88,Kelli Hills,15,Columbus,20,2023-12-13,11,Backpack,4,50
+72,Glenda Goodwin,6,Philadelphia,32,2023-12-13,15,Keyboard,2,120
+21,Cameron Ritchie,7,San Antonio,13,2023-03-15,15,Keyboard,5,120
+97,Irving Shields,2,Los Angeles,6,2023-06-16,27,Laptop,3,1200
+87,Gail Miller,24,Memphis,17,2023-11-25,6,Jacket,2,90
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,40,Tennis Shoes,1,60
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,34,Coffee Machine,2,35
+48,Lee Dicki,4,Houston,56,2023-03-21,31,Cell Phone,3,250
+62,Kurt Crooks,25,Nashville,14,2023-12-13,17,Mouse,2,15
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,44,Tennis Racquet,5,190
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,28,Laptop Case,2,60
+32,Willard Cremin-Kunde,2,Los Angeles,53,2023-10-31,26,Laptop,1,870
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,38,Espresso Machine,5,180
+9,Norman Crooks,17,Charlotte,19,2023-05-17,33,Cell Phone,1,420
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,19,Headset,2,12
+55,Ernest Senger III,18,Seattle,63,2023-09-22,33,Cell Phone,3,420
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,26,Laptop,5,870
+99,Priscilla Yost,9,Dallas,35,2023-11-19,17,Mouse,4,15
+68,Ruben Mertz,2,Los Angeles,97,2023-09-16,12,Backpack,3,60
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,11,Backpack,3,50
+22,Willard Walter,16,Fort Worth,62,2023-11-09,44,Tennis Racquet,2,190
+87,Gail Miller,24,Memphis,17,2023-11-25,31,Cell Phone,4,250
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,41,Tennis Shoes,4,85
+49,Hugh Mertz,18,Seattle,91,2023-11-11,23,Flash Drive,4,50
+97,Irving Shields,2,Los Angeles,58,2023-01-30,34,Coffee Machine,1,35
+78,Randal Kessler,2,Los Angeles,73,2023-12-06,5,Jacket,1,60
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,23,Flash Drive,2,50
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,24,Flash Drive,4,90
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,28,Laptop Case,5,60
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,29,Laptop Case,5,85
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,28,Laptop Case,2,60
+38,Eric Johns,17,Charlotte,26,2023-08-18,28,Laptop Case,3,60
+18,Lyle Gutkowski,4,Houston,38,2023-05-09,37,Espresso Machine,5,120
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,4,Jacket,3,45
+22,Willard Walter,16,Fort Worth,51,2023-01-24,22,Flash Drive,5,12
+37,Laurie Bode,19,Denver,76,2023-02-15,25,Laptop,4,550
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,39,Espresso Machine,4,480
+97,Irving Shields,2,Los Angeles,6,2023-06-16,42,Tennis Shoes,3,125
+67,Ms. Yolanda Larkin,15,Columbus,99,2023-07-21,36,Coffee Machine,5,90
+93,Danielle King,16,Fort Worth,18,2023-09-17,1,Shirt,4,15
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,1,Shirt,2,15
+8,Katie Olson,15,Columbus,66,2023-08-08,23,Flash Drive,1,50
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,45,Tennis Racquet,5,280
+9,Norman Crooks,17,Charlotte,19,2023-05-17,8,Socks,4,8
+43,Cynthia Runolfsson PhD,4,Houston,15,2023-10-21,44,Tennis Racquet,4,190
+68,Ruben Mertz,2,Los Angeles,97,2023-09-16,14,Keyboard,3,45
+87,Gail Miller,24,Memphis,17,2023-11-25,45,Tennis Racquet,5,280
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,13,Keyboard,3,25
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,29,Laptop Case,3,85
+38,Eric Johns,17,Charlotte,81,2023-06-12,8,Socks,5,8
+62,Kurt Crooks,25,Nashville,14,2023-12-13,8,Socks,5,8
+49,Hugh Mertz,18,Seattle,91,2023-11-11,16,Mouse,3,8
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,4,Jacket,4,45
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,16,Mouse,4,8
+21,Cameron Ritchie,7,San Antonio,13,2023-03-15,28,Laptop Case,1,60
+99,Priscilla Yost,9,Dallas,79,2023-11-08,44,Tennis Racquet,3,190
+48,Lee Dicki,4,Houston,56,2023-03-21,6,Jacket,3,90
+72,Glenda Goodwin,6,Philadelphia,95,2023-12-26,29,Laptop Case,2,85
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,39,Espresso Machine,5,480
+16,Tina Lang,3,Chicago,50,2024-01-01,5,Jacket,4,60
+73,Tina Hirthe,20,El Paso,70,2023-03-07,44,Tennis Racquet,3,190
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,45,Tennis Racquet,1,280
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,22,Flash Drive,4,12
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,21,Headset,1,35
+15,Conrad Treutel,23,Boston,60,2023-07-12,36,Coffee Machine,5,90
+93,Danielle King,16,Fort Worth,18,2023-09-17,32,Cell Phone,3,330
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,42,Tennis Shoes,5,125
+54,Mr. Wallace Dicki,6,Philadelphia,82,2023-06-16,7,Socks,5,5
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,2,Shirt,4,25
+87,Gail Miller,24,Memphis,55,2023-10-14,23,Flash Drive,4,50
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,38,Espresso Machine,5,180
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,31,Cell Phone,5,250
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,33,Cell Phone,4,420
+54,Mr. Wallace Dicki,6,Philadelphia,8,2023-08-10,21,Headset,3,35
+62,Kurt Crooks,25,Nashville,25,2023-06-27,4,Jacket,5,45
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,36,Coffee Machine,4,90
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,44,Tennis Racquet,5,190
+72,Glenda Goodwin,6,Philadelphia,43,2023-08-06,31,Cell Phone,3,250
+86,Ida Herzog,15,Columbus,44,2023-06-11,32,Cell Phone,1,330
+42,Dr. Carolyn Bartell MD,3,Chicago,10,2023-05-20,16,Mouse,3,8
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,31,Cell Phone,4,250
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,20,Headset,1,25
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,17,Mouse,3,15
+16,Tina Lang,3,Chicago,50,2024-01-01,4,Jacket,5,45
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,45,Tennis Racquet,3,280
+31,Guillermo Schuster DVM,14,Indianapolis,69,2023-08-19,38,Espresso Machine,4,180
+43,Cynthia Runolfsson PhD,4,Houston,15,2023-10-21,45,Tennis Racquet,4,280
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,28,Laptop Case,1,60
+67,Ms. Yolanda Larkin,15,Columbus,99,2023-07-21,34,Coffee Machine,5,35
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,36,Coffee Machine,2,90
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,3,Shirt,1,35
+89,Sarah Reichel,17,Charlotte,45,2023-08-29,31,Cell Phone,2,250
+48,Lee Dicki,4,Houston,88,2023-10-29,22,Flash Drive,5,12
+50,Kenneth Halvorson-Ward V,9,Dallas,39,2023-04-11,1,Shirt,5,15
+87,Gail Miller,24,Memphis,17,2023-11-25,34,Coffee Machine,1,35
+48,Lee Dicki,4,Houston,56,2023-03-21,20,Headset,5,25
+71,Gladys Towne,18,Seattle,33,2023-10-13,1,Shirt,2,15
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,28,Laptop Case,1,60
+8,Katie Olson,15,Columbus,66,2023-08-08,26,Laptop,1,870
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,35,Coffee Machine,5,75
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,25,Laptop,4,550
+64,Lucia Schamberger-Lueilwitz I,22,Washington,36,2023-10-14,12,Backpack,3,60
+89,Sarah Reichel,17,Charlotte,45,2023-08-29,28,Laptop Case,3,60
+71,Gladys Towne,18,Seattle,33,2023-10-13,20,Headset,3,25
+78,Randal Kessler,2,Los Angeles,73,2023-12-06,9,Socks,5,12
+100,Leland Wisoky,22,Washington,4,2023-07-17,12,Backpack,4,60
+88,Kelli Hills,15,Columbus,12,2023-06-23,21,Headset,5,35
+19,Joseph Douglas,6,Philadelphia,34,2023-02-07,39,Espresso Machine,4,480
+31,Guillermo Schuster DVM,14,Indianapolis,75,2023-02-15,27,Laptop,2,1200
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,38,Espresso Machine,2,180
+11,Ms. Pam Fay,16,Fort Worth,59,2023-10-24,20,Headset,3,25
+72,Glenda Goodwin,6,Philadelphia,95,2023-12-26,10,Backpack,3,35
+83,Cora Kunze,15,Columbus,49,2023-01-04,29,Laptop Case,4,85
+71,Gladys Towne,18,Seattle,33,2023-10-13,6,Jacket,5,90
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,36,Coffee Machine,3,90
+100,Leland Wisoky,22,Washington,96,2023-06-17,14,Keyboard,5,45
+72,Glenda Goodwin,6,Philadelphia,32,2023-12-13,32,Cell Phone,5,330
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,9,Socks,4,12
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,18,Mouse,3,45
+87,Gail Miller,24,Memphis,55,2023-10-14,7,Socks,2,5
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,28,Laptop Case,5,60
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,33,Cell Phone,2,420
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,24,Flash Drive,1,90
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,9,Socks,5,12
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,8,Socks,2,8
+93,Danielle King,16,Fort Worth,18,2023-09-17,31,Cell Phone,5,250
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,29,Laptop Case,3,85
+11,Ms. Pam Fay,16,Fort Worth,59,2023-10-24,35,Coffee Machine,2,75
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,29,Laptop Case,5,85
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,18,Mouse,5,45
+54,Mr. Wallace Dicki,6,Philadelphia,93,2023-08-06,4,Jacket,4,45
+86,Ida Herzog,15,Columbus,44,2023-06-11,13,Keyboard,3,25
+22,Willard Walter,16,Fort Worth,62,2023-11-09,21,Headset,2,35
+21,Cameron Ritchie,7,San Antonio,13,2023-03-15,19,Headset,2,12
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,25,Laptop,1,550
+93,Danielle King,16,Fort Worth,18,2023-09-17,43,Tennis Racquet,3,110
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,24,Flash Drive,3,90
+50,Kenneth Halvorson-Ward V,9,Dallas,29,2023-10-16,38,Espresso Machine,5,180
+29,Darla Donnelly,1,New York City,86,2023-03-28,12,Backpack,5,60
+89,Sarah Reichel,17,Charlotte,45,2023-08-29,13,Keyboard,3,25
+64,Lucia Schamberger-Lueilwitz I,22,Washington,36,2023-10-14,19,Headset,4,12
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,29,Laptop Case,3,85
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,27,Laptop,3,1200
+38,Eric Johns,17,Charlotte,26,2023-08-18,27,Laptop,1,1200
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,20,Headset,4,25
+34,Misty Wisoky,2,Los Angeles,68,2023-02-22,44,Tennis Racquet,1,190
+85,Ms. Stacey Koepp,3,Chicago,47,2023-03-13,19,Headset,5,12
+48,Lee Dicki,4,Houston,88,2023-10-29,41,Tennis Shoes,1,85
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,7,Socks,3,5
+78,Randal Kessler,2,Los Angeles,73,2023-12-06,3,Shirt,3,35
+23,Marc Glover,12,Jacksonville,40,2023-05-18,12,Backpack,3,60
+88,Kelli Hills,15,Columbus,20,2023-12-13,42,Tennis Shoes,4,125
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,12,Backpack,3,60
+48,Lee Dicki,4,Houston,88,2023-10-29,35,Coffee Machine,3,75
+49,Hugh Mertz,18,Seattle,91,2023-11-11,17,Mouse,1,15
+50,Kenneth Halvorson-Ward V,9,Dallas,98,2023-08-19,20,Headset,4,25
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,28,Laptop Case,5,60
+83,Cora Kunze,15,Columbus,49,2023-01-04,44,Tennis Racquet,3,190
+95,Marcus Will-Powlowski Jr.,16,Fort Worth,48,2023-07-10,35,Coffee Machine,2,75
+23,Marc Glover,12,Jacksonville,40,2023-05-18,43,Tennis Racquet,1,110
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,45,Tennis Racquet,3,280
+25,Rosemarie Schamberger,2,Los Angeles,61,2023-02-11,15,Keyboard,2,120
+15,Conrad Treutel,23,Boston,60,2023-07-12,16,Mouse,5,8
+77,Ronnie Boehm-Langworth,16,Fort Worth,57,2023-01-18,20,Headset,1,25
+73,Tina Hirthe,20,El Paso,70,2023-03-07,42,Tennis Shoes,1,125
+88,Kelli Hills,15,Columbus,20,2023-12-13,44,Tennis Racquet,3,190
+38,Eric Johns,17,Charlotte,26,2023-08-18,1,Shirt,1,15
+99,Priscilla Yost,9,Dallas,35,2023-11-19,21,Headset,3,35
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,21,Headset,3,35
+29,Darla Donnelly,1,New York City,86,2023-03-28,32,Cell Phone,4,330
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,36,Coffee Machine,4,90
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,18,Mouse,1,45
+9,Norman Crooks,17,Charlotte,19,2023-05-17,31,Cell Phone,4,250
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,16,Mouse,2,8
+21,Cameron Ritchie,7,San Antonio,16,2023-01-28,44,Tennis Racquet,4,190
+64,Lucia Schamberger-Lueilwitz I,22,Washington,36,2023-10-14,11,Backpack,1,50
+22,Willard Walter,16,Fort Worth,51,2023-01-24,40,Tennis Shoes,2,60
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,39,Espresso Machine,5,480
+68,Ruben Mertz,2,Los Angeles,97,2023-09-16,15,Keyboard,3,120
+67,Ms. Yolanda Larkin,15,Columbus,99,2023-07-21,25,Laptop,2,550
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,8,Socks,5,8
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,16,Mouse,3,8
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,10,Backpack,3,35
+42,Dr. Carolyn Bartell MD,3,Chicago,10,2023-05-20,3,Shirt,1,35
+43,Cynthia Runolfsson PhD,4,Houston,15,2023-10-21,17,Mouse,4,15
+50,Kenneth Halvorson-Ward V,9,Dallas,98,2023-08-19,23,Flash Drive,4,50
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,9,Socks,1,12
+54,Mr. Wallace Dicki,6,Philadelphia,93,2023-08-06,35,Coffee Machine,3,75
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,32,Cell Phone,4,330
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,37,Espresso Machine,4,120
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,31,Cell Phone,3,250
+21,Cameron Ritchie,7,San Antonio,16,2023-01-28,17,Mouse,3,15
+22,Willard Walter,16,Fort Worth,62,2023-11-09,28,Laptop Case,5,60
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,38,Espresso Machine,1,180
+62,Kurt Crooks,25,Nashville,14,2023-12-13,21,Headset,1,35
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,34,Coffee Machine,1,35
+83,Cora Kunze,15,Columbus,49,2023-01-04,32,Cell Phone,2,330
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,45,Tennis Racquet,5,280
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,7,Socks,4,5
+15,Conrad Treutel,23,Boston,60,2023-07-12,23,Flash Drive,2,50
+100,Leland Wisoky,22,Washington,4,2023-07-17,30,Laptop Case,4,110
+5,Marion Grant III,3,Chicago,78,2023-03-08,10,Backpack,1,35
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,17,Mouse,3,15
+100,Leland Wisoky,22,Washington,4,2023-07-17,11,Backpack,3,50
+38,Eric Johns,17,Charlotte,26,2023-08-18,21,Headset,3,35
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,44,Tennis Racquet,2,190
+86,Ida Herzog,15,Columbus,44,2023-06-11,4,Jacket,2,45
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,6,Jacket,4,90
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,38,Espresso Machine,3,180
+95,Marcus Will-Powlowski Jr.,16,Fort Worth,48,2023-07-10,1,Shirt,2,15
+87,Gail Miller,24,Memphis,17,2023-11-25,7,Socks,1,5
+23,Marc Glover,12,Jacksonville,40,2023-05-18,21,Headset,4,35
+60,Ross Abernathy,19,Denver,89,2023-11-03,13,Keyboard,1,25
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,17,Mouse,2,15
+67,Ms. Yolanda Larkin,15,Columbus,3,2023-12-23,35,Coffee Machine,2,75
+49,Hugh Mertz,18,Seattle,91,2023-11-11,34,Coffee Machine,5,35
+89,Sarah Reichel,17,Charlotte,45,2023-08-29,4,Jacket,2,45
+15,Conrad Treutel,23,Boston,23,2023-01-16,38,Espresso Machine,4,180
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,9,Socks,2,12
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,28,Laptop Case,2,60
+78,Randal Kessler,2,Los Angeles,37,2023-09-24,30,Laptop Case,2,110
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,44,Tennis Racquet,4,190
+31,Guillermo Schuster DVM,14,Indianapolis,27,2023-02-26,41,Tennis Shoes,1,85
+49,Hugh Mertz,18,Seattle,91,2023-11-11,5,Jacket,4,60
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,30,Laptop Case,1,110
+85,Ms. Stacey Koepp,3,Chicago,47,2023-03-13,20,Headset,4,25
+95,Marcus Will-Powlowski Jr.,16,Fort Worth,48,2023-07-10,4,Jacket,4,45
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,24,Flash Drive,5,90
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,30,Laptop Case,2,110
+73,Tina Hirthe,20,El Paso,70,2023-03-07,40,Tennis Shoes,3,60
+99,Priscilla Yost,9,Dallas,35,2023-11-19,41,Tennis Shoes,4,85
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,21,Headset,5,35
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,40,Tennis Shoes,4,60
+9,Norman Crooks,17,Charlotte,19,2023-05-17,9,Socks,1,12
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,26,Laptop,2,870
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,8,Socks,2,8
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,18,Mouse,2,45
+95,Marcus Will-Powlowski Jr.,16,Fort Worth,48,2023-07-10,2,Shirt,1,25
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,9,Socks,4,12
+32,Willard Cremin-Kunde,2,Los Angeles,53,2023-10-31,24,Flash Drive,5,90
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,6,Jacket,5,90
+21,Cameron Ritchie,7,San Antonio,13,2023-03-15,10,Backpack,2,35
+78,Randal Kessler,2,Los Angeles,73,2023-12-06,18,Mouse,4,45
+11,Ms. Pam Fay,16,Fort Worth,59,2023-10-24,21,Headset,5,35
+93,Danielle King,16,Fort Worth,18,2023-09-17,3,Shirt,4,35
+34,Misty Wisoky,2,Los Angeles,24,2023-09-06,19,Headset,3,12
+77,Ronnie Boehm-Langworth,16,Fort Worth,57,2023-01-18,6,Jacket,4,90
+5,Marion Grant III,3,Chicago,78,2023-03-08,11,Backpack,4,50
+86,Ida Herzog,15,Columbus,44,2023-06-11,16,Mouse,3,8
+15,Conrad Treutel,23,Boston,23,2023-01-16,34,Coffee Machine,4,35
+72,Glenda Goodwin,6,Philadelphia,95,2023-12-26,36,Coffee Machine,1,90
+48,Lee Dicki,4,Houston,88,2023-10-29,28,Laptop Case,1,60
+86,Ida Herzog,15,Columbus,44,2023-06-11,22,Flash Drive,4,12
+85,Ms. Stacey Koepp,3,Chicago,47,2023-03-13,42,Tennis Shoes,2,125
+86,Ida Herzog,15,Columbus,44,2023-06-11,45,Tennis Racquet,1,280
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,35,Coffee Machine,3,75
+9,Norman Crooks,17,Charlotte,19,2023-05-17,15,Keyboard,4,120
+62,Kurt Crooks,25,Nashville,14,2023-12-13,12,Backpack,2,60
+67,Ms. Yolanda Larkin,15,Columbus,3,2023-12-23,4,Jacket,2,45
+34,Misty Wisoky,2,Los Angeles,68,2023-02-22,27,Laptop,2,1200
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,43,Tennis Racquet,2,110
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,21,Headset,3,35
+15,Conrad Treutel,23,Boston,60,2023-07-12,19,Headset,5,12
+22,Willard Walter,16,Fort Worth,62,2023-11-09,3,Shirt,2,35
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,2,Shirt,3,25
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,19,Headset,3,12
+67,Ms. Yolanda Larkin,15,Columbus,3,2023-12-23,38,Espresso Machine,2,180
+31,Guillermo Schuster DVM,14,Indianapolis,83,2023-02-21,14,Keyboard,4,45
+67,Ms. Yolanda Larkin,15,Columbus,99,2023-07-21,24,Flash Drive,4,90
+42,Dr. Carolyn Bartell MD,3,Chicago,10,2023-05-20,17,Mouse,3,15
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,41,Tennis Shoes,5,85
+11,Ms. Pam Fay,16,Fort Worth,11,2023-04-01,14,Keyboard,2,45
+66,Bruce Collins,24,Memphis,2,2023-02-28,32,Cell Phone,5,330
+15,Conrad Treutel,23,Boston,23,2023-01-16,30,Laptop Case,3,110
+38,Eric Johns,17,Charlotte,26,2023-08-18,24,Flash Drive,2,90
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,4,Jacket,1,45
+23,Marc Glover,12,Jacksonville,40,2023-05-18,10,Backpack,2,35
+55,Ernest Senger III,18,Seattle,63,2023-09-22,15,Keyboard,1,120
+83,Cora Kunze,15,Columbus,49,2023-01-04,37,Espresso Machine,2,120
+99,Priscilla Yost,9,Dallas,35,2023-11-19,38,Espresso Machine,2,180
+88,Kelli Hills,15,Columbus,20,2023-12-13,3,Shirt,2,35
+50,Kenneth Halvorson-Ward V,9,Dallas,29,2023-10-16,45,Tennis Racquet,2,280
+7,Miss Natasha Kulas,23,Boston,87,2023-07-16,3,Shirt,4,35
+48,Lee Dicki,4,Houston,88,2023-10-29,6,Jacket,4,90
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,2,Shirt,1,25
+21,Cameron Ritchie,7,San Antonio,16,2023-01-28,41,Tennis Shoes,1,85
+22,Willard Walter,16,Fort Worth,51,2023-01-24,39,Espresso Machine,4,480
+21,Cameron Ritchie,7,San Antonio,13,2023-03-15,35,Coffee Machine,4,75
+66,Bruce Collins,24,Memphis,2,2023-02-28,9,Socks,2,12
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,18,Mouse,3,45
+5,Marion Grant III,3,Chicago,78,2023-03-08,26,Laptop,2,870
+5,Marion Grant III,3,Chicago,78,2023-03-08,16,Mouse,1,8
+62,Kurt Crooks,25,Nashville,14,2023-12-13,16,Mouse,4,8
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,27,Laptop,5,1200
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,29,Laptop Case,3,85
+50,Kenneth Halvorson-Ward V,9,Dallas,39,2023-04-11,38,Espresso Machine,2,180
+48,Lee Dicki,4,Houston,56,2023-03-21,45,Tennis Racquet,5,280
+49,Hugh Mertz,18,Seattle,91,2023-11-11,18,Mouse,3,45
+85,Ms. Stacey Koepp,3,Chicago,47,2023-03-13,32,Cell Phone,2,330
+100,Leland Wisoky,22,Washington,4,2023-07-17,13,Keyboard,2,25
+22,Willard Walter,16,Fort Worth,62,2023-11-09,27,Laptop,5,1200
+9,Norman Crooks,17,Charlotte,19,2023-05-17,20,Headset,3,25
+31,Guillermo Schuster DVM,14,Indianapolis,27,2023-02-26,40,Tennis Shoes,2,60
+60,Ross Abernathy,19,Denver,89,2023-11-03,11,Backpack,2,50
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,17,Mouse,2,15
+48,Lee Dicki,4,Houston,88,2023-10-29,37,Espresso Machine,5,120
+54,Mr. Wallace Dicki,6,Philadelphia,82,2023-06-16,29,Laptop Case,2,85
+72,Glenda Goodwin,6,Philadelphia,43,2023-08-06,17,Mouse,2,15
+78,Randal Kessler,2,Los Angeles,85,2023-06-23,20,Headset,2,25
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,38,Espresso Machine,3,180
+72,Glenda Goodwin,6,Philadelphia,95,2023-12-26,37,Espresso Machine,4,120
+24,Trevor Nicolas,6,Philadelphia,84,2023-07-09,16,Mouse,4,8
+54,Mr. Wallace Dicki,6,Philadelphia,8,2023-08-10,41,Tennis Shoes,5,85
+31,Guillermo Schuster DVM,14,Indianapolis,69,2023-08-19,28,Laptop Case,5,60
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,22,Flash Drive,3,12
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,44,Tennis Racquet,3,190
+5,Marion Grant III,3,Chicago,78,2023-03-08,5,Jacket,3,60
+37,Laurie Bode,19,Denver,76,2023-02-15,7,Socks,3,5
+72,Glenda Goodwin,6,Philadelphia,32,2023-12-13,37,Espresso Machine,5,120
+60,Ross Abernathy,19,Denver,89,2023-11-03,27,Laptop,3,1200
+14,Marianne Gibson,17,Charlotte,100,2023-09-01,37,Espresso Machine,4,120
+18,Lyle Gutkowski,4,Houston,38,2023-05-09,39,Espresso Machine,4,480
+31,Guillermo Schuster DVM,14,Indianapolis,27,2023-02-26,45,Tennis Racquet,1,280
+38,Eric Johns,17,Charlotte,81,2023-06-12,4,Jacket,1,45
+72,Glenda Goodwin,6,Philadelphia,43,2023-08-06,16,Mouse,3,8
+100,Leland Wisoky,22,Washington,71,2023-01-08,28,Laptop Case,3,60
+16,Tina Lang,3,Chicago,50,2024-01-01,25,Laptop,3,550
+31,Guillermo Schuster DVM,14,Indianapolis,75,2023-02-15,12,Backpack,4,60
+21,Cameron Ritchie,7,San Antonio,16,2023-01-28,22,Flash Drive,4,12
+31,Guillermo Schuster DVM,14,Indianapolis,27,2023-02-26,14,Keyboard,5,45
+50,Kenneth Halvorson-Ward V,9,Dallas,98,2023-08-19,1,Shirt,2,15
+8,Katie Olson,15,Columbus,66,2023-08-08,32,Cell Phone,3,330
+78,Randal Kessler,2,Los Angeles,37,2023-09-24,32,Cell Phone,4,330
+85,Ms. Stacey Koepp,3,Chicago,47,2023-03-13,3,Shirt,2,35
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,10,Backpack,1,35
+76,Mr. Jody Rolfson,23,Boston,72,2023-04-17,27,Laptop,5,1200
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,23,Flash Drive,2,50
+97,Irving Shields,2,Los Angeles,6,2023-06-16,22,Flash Drive,4,12
+9,Norman Crooks,17,Charlotte,19,2023-05-17,5,Jacket,5,60
+9,Norman Crooks,17,Charlotte,19,2023-05-17,40,Tennis Shoes,5,60
+48,Lee Dicki,4,Houston,88,2023-10-29,15,Keyboard,1,120
+6,Dr. Warren Murphy,7,San Antonio,54,2023-05-29,1,Shirt,1,15
+25,Rosemarie Schamberger,2,Los Angeles,80,2023-03-17,38,Espresso Machine,1,180
+86,Ida Herzog,15,Columbus,44,2023-06-11,43,Tennis Racquet,3,110
+99,Priscilla Yost,9,Dallas,79,2023-11-08,10,Backpack,3,35
+48,Lee Dicki,4,Houston,56,2023-03-21,25,Laptop,1,550
+16,Tina Lang,3,Chicago,50,2024-01-01,44,Tennis Racquet,2,190
+68,Ruben Mertz,2,Los Angeles,97,2023-09-16,4,Jacket,5,45
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,28,Laptop Case,5,60
+38,Eric Johns,17,Charlotte,26,2023-08-18,34,Coffee Machine,4,35
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,22,Flash Drive,4,12
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,25,Laptop,4,550
+84,Mrs. Joann Satterfield,9,Dallas,21,2023-08-27,37,Espresso Machine,5,120
+99,Priscilla Yost,9,Dallas,79,2023-11-08,42,Tennis Shoes,4,125
+38,Eric Johns,17,Charlotte,81,2023-06-12,34,Coffee Machine,1,35
+87,Gail Miller,24,Memphis,55,2023-10-14,35,Coffee Machine,5,75
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,14,Keyboard,2,45
+16,Tina Lang,3,Chicago,50,2024-01-01,40,Tennis Shoes,4,60
+48,Lee Dicki,4,Houston,88,2023-10-29,18,Mouse,5,45
+86,Ida Herzog,15,Columbus,44,2023-06-11,2,Shirt,5,25
+49,Hugh Mertz,18,Seattle,91,2023-11-11,28,Laptop Case,1,60
+9,Norman Crooks,17,Charlotte,19,2023-05-17,4,Jacket,5,45
+22,Willard Walter,16,Fort Worth,51,2023-01-24,16,Mouse,5,8
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,5,Jacket,5,60
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,2,Shirt,3,25
+24,Trevor Nicolas,6,Philadelphia,28,2023-04-26,2,Shirt,4,25
+62,Kurt Crooks,25,Nashville,14,2023-12-13,37,Espresso Machine,4,120
+15,Conrad Treutel,23,Boston,23,2023-01-16,3,Shirt,5,35
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,28,Laptop Case,1,60
+93,Danielle King,16,Fort Worth,18,2023-09-17,19,Headset,3,12
+55,Ernest Senger III,18,Seattle,63,2023-09-22,26,Laptop,1,870
+99,Priscilla Yost,9,Dallas,35,2023-11-19,14,Keyboard,3,45
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,8,Socks,4,8
+67,Ms. Yolanda Larkin,15,Columbus,3,2023-12-23,15,Keyboard,2,120
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,27,Laptop,4,1200
+54,Mr. Wallace Dicki,6,Philadelphia,93,2023-08-06,32,Cell Phone,2,330
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,3,Shirt,4,35
+49,Hugh Mertz,18,Seattle,91,2023-11-11,22,Flash Drive,1,12
+73,Tina Hirthe,20,El Paso,70,2023-03-07,17,Mouse,4,15
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,42,Tennis Shoes,3,125
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,22,Flash Drive,4,12
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,17,Mouse,5,15
+5,Marion Grant III,3,Chicago,78,2023-03-08,8,Socks,3,8
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,14,Keyboard,2,45
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,4,Jacket,2,45
+23,Marc Glover,12,Jacksonville,40,2023-05-18,3,Shirt,3,35
+26,Lillian Ullrich,17,Charlotte,31,2023-10-06,9,Socks,2,12
+12,Roberta Hermiston,7,San Antonio,67,2023-08-03,39,Espresso Machine,3,480
+83,Cora Kunze,15,Columbus,49,2023-01-04,12,Backpack,4,60
+22,Willard Walter,16,Fort Worth,51,2023-01-24,44,Tennis Racquet,1,190
+71,Gladys Towne,18,Seattle,33,2023-10-13,2,Shirt,4,25
+64,Lucia Schamberger-Lueilwitz I,22,Washington,65,2023-12-27,35,Coffee Machine,1,75
+89,Sarah Reichel,17,Charlotte,45,2023-08-29,30,Laptop Case,3,110
+54,Mr. Wallace Dicki,6,Philadelphia,93,2023-08-06,12,Backpack,2,60
+67,Ms. Yolanda Larkin,15,Columbus,92,2023-12-04,9,Socks,1,12
+88,Kelli Hills,15,Columbus,20,2023-12-13,45,Tennis Racquet,5,280
+4,Vicky Reichert,5,Phoenix,42,2023-10-06,43,Tennis Racquet,3,110
+100,Leland Wisoky,22,Washington,4,2023-07-17,14,Keyboard,1,45
+77,Ronnie Boehm-Langworth,16,Fort Worth,9,2023-12-23,6,Jacket,1,90
+63,Gilbert Lang,16,Fort Worth,5,2023-08-08,16,Mouse,1,8
+21,Cameron Ritchie,7,San Antonio,16,2023-01-28,29,Laptop Case,4,85
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,24,Flash Drive,5,90
+66,Bruce Collins,24,Memphis,2,2023-02-28,40,Tennis Shoes,4,60
+37,Laurie Bode,19,Denver,76,2023-02-15,21,Headset,4,35
+67,Ms. Yolanda Larkin,15,Columbus,99,2023-07-21,6,Jacket,4,90
+49,Hugh Mertz,18,Seattle,91,2023-11-11,37,Espresso Machine,3,120
+34,Misty Wisoky,2,Los Angeles,74,2023-12-08,37,Espresso Machine,2,120
+99,Priscilla Yost,9,Dallas,35,2023-11-19,16,Mouse,2,8
+48,Lee Dicki,4,Houston,56,2023-03-21,42,Tennis Shoes,1,125
+48,Lee Dicki,4,Houston,88,2023-10-29,34,Coffee Machine,3,35
+59,Samantha Kuhic III,19,Denver,22,2023-09-19,13,Keyboard,4,25
+77,Ronnie Boehm-Langworth,16,Fort Worth,57,2023-01-18,23,Flash Drive,1,50
+96,Dwight Rowe DDS,9,Dallas,30,2023-10-28,25,Laptop,4,550
+100,Leland Wisoky,22,Washington,4,2023-07-17,8,Socks,2,8
+43,Cynthia Runolfsson PhD,4,Houston,64,2023-08-21,14,Keyboard,4,45
+31,Guillermo Schuster DVM,14,Indianapolis,75,2023-02-15,15,Keyboard,4,120
+90,Alexandra Gerhold,9,Dallas,46,2023-07-22,2,Shirt,4,25
+78,Randal Kessler,2,Los Angeles,37,2023-09-24,22,Flash Drive,2,12
+4,Vicky Reichert,5,Phoenix,52,2023-02-05,25,Laptop,1,550
+72,Glenda Goodwin,6,Philadelphia,95,2023-12-26,23,Flash Drive,3,50
+29,Darla Donnelly,1,New York City,86,2023-03-28,34,Coffee Machine,5,35
+32,Willard Cremin-Kunde,2,Los Angeles,53,2023-10-31,40,Tennis Shoes,4,60
+46,Dr. Willie Koss I,19,Denver,7,2023-10-28,43,Tennis Racquet,2,110
+86,Ida Herzog,15,Columbus,44,2023-06-11,21,Headset,1,35
+100,Leland Wisoky,22,Washington,71,2023-01-08,14,Keyboard,5,45

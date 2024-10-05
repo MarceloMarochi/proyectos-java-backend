@@ -1,0 +1,10 @@
+<configuration>
+    <!-- Configurar el nivel de logging para Hibernate -->
+    <logger name="org.hibernate" level="ERROR" />
+    <logger name="org.hibernate.SQL" level="ERROR" />
+    <logger name="org.hibernate.type.descriptor.sql" level="ERROR" />
+    <logger name="org.hibernate.engine" level="ERROR" />
+
+    <!-- Configurar el nivel de logging para la salida SQL -->
+    <logger name="org.hibernate.type" level="ERROR" />
+</configuration>
