@@ -1,7 +1,6 @@
 package utn.frc.bka;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -11,29 +10,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-// Clase para asignarle los valores obtenidos en el CSV a una instancia
-class Product {
-
-    // Cuando el tipo de dato empieza con mayúscula es de tipo envoltorio y aadmite nulos.
-    Integer id;
-
-    String nombre;
-
-    Double price;
-
-    // Constructor
-    public Product(Integer id, String nombre, Double price) {
-        this.id = id;
-        this.nombre = nombre;
-        this.price = price;
-    }
-}
-
-
-public class Orders {
-
+public class ArchivoCSV {
     // Parametros: el path, int desplazamiento (líneas iniciales que se desea saltar), int límite de líneas que se desea leer.
-    private static List <String> readTxtFileLines(String txtFilePath, int offset, int limit) {
+    private static List<String> readTxtFileLines(String txtFilePath, int offset, int limit) {
         // Se inicializa la lista dinámica lines
         List<String> lines = new ArrayList<>();
 
@@ -70,6 +49,13 @@ public class Orders {
 
         String fPath = System.getProperty("user.dir") + "\\Orders.csv";
 
+        // Listas que vamos a usar
+        List<Product> products = new ArrayList<>();
+        List<Client> clients = new ArrayList<>();
+        List<City> citys = new ArrayList<>();
+        List<Order> orders = new ArrayList<>();
+
+
         try {
             // Obtengo una lista de String con las lineas.
             List<String> lines = readTxtFileLines(fPath, 1, 10);
@@ -87,13 +73,45 @@ public class Orders {
 
                 Date orderDate = parseDate(values[5].replace('"', ' ').trim(), "yyyy-MM-dd");
 
-                System.out.println("ID: " + customerId + " --- NOMBRE: " + customerName + " --- FECHA: "+ orderDate);
+                // System.out.println("ID: " + customerId + " --- NOMBRE: " + customerName + " --- FECHA: "+ orderDate);
 
                 // Crear un objeto Producto con los datos obtenidos del CSV
-                Product product = new Product(Integer.parseInt(values[6]), values[7], Double.parseDouble(values[9]));
+                Product product = new Product(Integer.parseInt(values[6]), values[7], Integer.parseInt(values[8]),Double.parseDouble(values[9]));
+                products.add(product);
+
+                // Crear un objeto Producto con los datos obtenidos del CSV
+                Client client = new Client(Integer.parseInt(values[0]), values[1]);
+                clients.add(client);
+
+                // Crear un objeto Producto con los datos obtenidos del CSV
+                City city = new City(Integer.parseInt(values[2]), values[3]);
+                citys.add(city);
+
+                // Crear un objeto Producto con los datos obtenidos del CSV
+                Order order = new Order(Integer.parseInt(values[4]), values[5]);
+                orders.add(order);
             }
+
+            System.out.println("---------ORDERS----------");
+            for (Order order : orders) {
+                System.out.println("ID: " + order.getId() + " - Date: " + order.getDate());
+            }
+            System.out.println("\n\n---------CLIENTS----------");
+            for (Client client : clients) {
+                System.out.println("ID: " + client.getClientId() + " - Name: " + client.getName());
+            }
+            System.out.println("\n\n---------PRODUCTS----------");
+            for (Product product : products) {
+                System.out.println("ID: " + product.getId() + " - Name: " + product.getNombre() + " - Count: " + product.getCount() + " - Price: " + product.getPrice());
+            }
+            System.out.println("\n\n---------CITYS----------");
+            for (City city : citys) {
+                System.out.println("ID: " + city.getCityId() + " - Name: " + city.getName());
+            }
+
         } catch (ParseException e) {
             System.out.println("ERROR " + e.getMessage());
         }
     }
 }
+
