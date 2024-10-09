@@ -62,6 +62,7 @@ class Pet {
         setEnergy(energy + inc);
     }
 
+    // Se castea a INT el calculo energy * inc
     private void incEnergy(float inc) {
         setEnergy((int) (energy * inc));
     }
