@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/utn/frc/bka/jdbc/res/ddbb/h2/01.sacdb.estructura.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/java/utn/frc/bka/jdbc/res/ddbb/h2/02.sacdb.carga.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/java/utn/frc/bka/jdbc/res/ddbb/h2/03.sacdb.consultas.sql" dialect="H2" />
+  </component>
+</project>
