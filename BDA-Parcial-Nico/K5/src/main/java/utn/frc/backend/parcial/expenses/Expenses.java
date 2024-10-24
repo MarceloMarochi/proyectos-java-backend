@@ -21,10 +21,9 @@ public class Expenses {
     private static final int EXPENSE_SUBMISSION_ID_INDEX = 4, EXPENSE_SUBMISSION_DATE_INDEX = 5;
     private static final int EXPENSE_ID_INDEX = 7, EXPENSE_NAME_INDEX = 8;
     private static final int DET_ID_INDEX = 6, DET_AMOUNT_INDEX = 9;
-    private static final String PERSISTENCE_UNIT_NAME = "expensescdb";
+    private static final String PERSISTENCE_UNIT_NAME = "expensesdb";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
-    private static final String CSV_PATH = "D:\\Documentos\\INGENIERÍA EN SISTEMAS\\3° Año\\BACKEND\\Proyectos\\BDA-Parcial\\BDA-Parcial\\Expenses.csv";
-
+    private static final String CSV_PATH = "C:\\Users\\Usuario\\Desktop\\Escritorio\\Nico\\UTN\\Backend 2024\\PARCIALES\\K5\\Expenses.csv";
 
     record CsvRow(
             Integer empId, String empName, Integer dptId, String dptName,
@@ -34,7 +33,6 @@ public class Expenses {
 
     private static List<CsvRow> rowList;
 
-    // Recibe un array de string que en este caso sería el splitline del metodo lectorCSV y devuelve un objeto de tipo CsvRow
     private static Function<String[], CsvRow> csvRowMapper = (arr) -> {
         Date date = null;
         try {
@@ -57,101 +55,106 @@ public class Expenses {
         );
     };
 
-    private static void lectorCSV(String filPath, EntityManager em) {
+    private static void lectorCSV(String filePath, EntityManager em) {
+        int cont = 0;
         rowList = new ArrayList<>();
-        int count = 1;
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filPath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
 
-
-            while ((line = br.readLine()) != null) {
-                if (count > 1) {
+            while(((line = br.readLine()) != null)) {
+                cont++;
+                if (cont > 1) {
                     String[] splitline = line.split(",");
+
                     CsvRow row = csvRowMapper.apply(splitline);
                     rowList.add(row);
 
-                    crearInstancia(row, em);
+                    crearInstancias(row, em);
                 }
-                count++;
-
             }
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            }
         }
+    }
 
-    private static void crearInstancia(CsvRow row, EntityManager em) {
+    private static void crearInstancias(CsvRow row, EntityManager em) {
+        /**
+         *      En cada instancia de entidad (Department, Employee, etc.), se realiza una verificación
+         *      utilizando el método 'em.find(EntityClass.class, id)' antes de crear un nuevo objeto.
+         *      Esto permite determinar si un registro con la misma clave primaria ya existe en la base de datos.
+         *
+         *      Si el objeto ya existe, la variable contendrá la referencia a ese objeto existente,
+         *      evitando la creación de un nuevo objeto con la misma clave primaria. Si el objeto no existe
+         *      (es null), entonces se crea una nueva instancia y se asocian las relaciones correspondientes.
+         *
+         *      Esto evita violaciones de unicidad o restricciones de clave primaria, asegurando
+         *      que cada entidad se maneje de forma correcta y consistente sin duplicar registros en la base de datos.
+         *
+         *      Forma de creación con inconsistencia y errores:
+         *          Department department = new Department(row.dptId(), row.dptName());
+         *          Employee employee = new Employee(row.empId(), row.empName(), department);
+         *          ExpenseSubmission expenseSubmission = new ExpenseSubmission(row.subId(), row.subDate(), employee);
+         *          ExpenseSubmissionDetail expenseSubmissionDetail = new ExpenseSubmissionDetail(row.detId(), row.detAmmount(), expenseSubmission);
+         *          Expense expense = new Expense(row.expId(), row.expName());
+         */
 
         em.getTransaction().begin();
 
-//        Departament departament = new Departament(row.detId(), row.dptName());
-//
-//        Employee employee = new Employee(row.empId(), row.empName(), departament);
-//        departament.setEmployees(employee);
-//
-//        ExpenseSubmission expenseSubmission = new ExpenseSubmission(row.subId(), row.subDate(), employee);
-//
-//        ExpensesSubmissionDetail expenseSubDet = new ExpensesSubmissionDetail(row.detId(), row.detAmmount());
-//        expenseSubmission.setExpSubDet(expenseSubDet);
-//        expenseSubDet.setExpSub(expenseSubmission);
-//
-//        Expense expense = new Expense(row.expId(), row.expName());
-//        expenseSubDet.setExpense(expense);
-//        expense.setExpSubDet(expenseSubDet);
-
-
-        Departament departament = em.find(Departament.class, row.dptId());
-        if (departament == null) {
-            departament = new Departament(row.dptId(), row.dptName());
+        Department department = em.find(Department.class, row.dptId());
+        if (department == null) {
+            department = new Department(row.dptId(), row.dptName());
         }
 
         Employee employee = em.find(Employee.class, row.empId());
         if(employee == null) {
-            employee = new Employee(row.empId(), row.empName(), departament);
+            employee = new Employee(row.empId(), row.empName(), department);
         }
-
-
 
         ExpenseSubmission expenseSubmission = em.find(ExpenseSubmission.class, row.subId());
         if (expenseSubmission == null) {
             expenseSubmission = new ExpenseSubmission(row.subId(), row.subDate(), employee);
         }
 
-        ExpensesSubmissionDetail expenseSubmissionDetail = em.find(ExpensesSubmissionDetail.class, row.detId());
+        ExpenseSubmissionDetail expenseSubmissionDetail = em.find(ExpenseSubmissionDetail.class, row.detId());
         if(expenseSubmissionDetail == null) {
-            expenseSubmissionDetail = new ExpensesSubmissionDetail(row.detId(), row.detAmmount());
+            expenseSubmissionDetail = new ExpenseSubmissionDetail(row.detId(), row.detAmmount(), expenseSubmission);
         }
-
-
 
         Expense expense = em.find(Expense.class, row.expId());
         if (expense == null) {
             expense = new Expense(row.expId(), row.expName());
         }
 
-        departament.setEmployees(employee);
-        expenseSubmission.setExpSubDet(expenseSubmissionDetail);
-        expenseSubmissionDetail.setExpSub(expenseSubmission);
-        expenseSubmissionDetail.setExpense(expense);
-        expense.setExpSubDet(expenseSubmissionDetail);
-//        employee.setExpenses(expense);
-//        expense.setEmployee(employee);
+        /**
+         *      Relaciones con las intancias creadas: Asegura que no se creen objetos duplicados.
+         *      Al vincular las entidades de esta forma, te aseguras de que cada registro esté relacionado correctamente
+         *      con las instancias existentes, evitando así problemas de duplicación o inconsistencias en la base de datos.
+         */
 
+        department.setEmployees(employee);
+        expenseSubmission.setExpsubdet(expenseSubmissionDetail);
+        expenseSubmissionDetail.setExpesense(expense);
+        expense.setdetalle(expenseSubmissionDetail);
 
-        System.out.println("-------------------------------------");
-        System.out.println(departament);
-        System.out.println(employee);
-        System.out.println(expense);
-        System.out.println(expenseSubmission);
-        System.out.println(expenseSubmissionDetail);
+        /**
+         *      Pruebas sobre los objetos que se van creando:
+         *
+         *      System.out.println("------------------------------------------------------");
+         *      System.out.println(department);
+         *      System.out.println(employee);
+         *      System.out.println(expenseSubmission);
+         *      System.out.println(expenseSubmissionDetail);
+         *      System.out.println(expense);
+         */
 
         try {
-            em.persist(departament);
+            em.persist(department);
             em.persist(employee);
-            em.persist(expense);
-            em.persist(expenseSubmissionDetail);
             em.persist(expenseSubmission);
+            em.persist(expenseSubmissionDetail);
+            em.persist(expense);
         } catch (PersistenceException e) {
             System.out.println(e.getMessage());
         }
@@ -160,15 +163,18 @@ public class Expenses {
     }
 
     public static void main(String[] args) throws Exception {
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         EntityManager em = emf.createEntityManager();
+
+//        Función para cargar la base a partir del csv (comentada porque ya se cargó)
+
+          lectorCSV(CSV_PATH, em);
+
+//        Requerimientos a implementar:
 
 //        employeeExpenses(null, null);
 //        departmentExpenses(null, null);
 //        expenseSummary(null, null, "1900-01-01", "2100-12-31");
-
-        lectorCSV(CSV_PATH, em);
 
         em.close();
         emf.close();
