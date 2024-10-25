@@ -85,22 +85,6 @@ public class Expenses {
 
         em.getTransaction().begin();
 
-//        Departament departament = new Departament(row.detId(), row.dptName());
-//
-//        Employee employee = new Employee(row.empId(), row.empName(), departament);
-//        departament.setEmployees(employee);
-//
-//        ExpenseSubmission expenseSubmission = new ExpenseSubmission(row.subId(), row.subDate(), employee);
-//
-//        ExpensesSubmissionDetail expenseSubDet = new ExpensesSubmissionDetail(row.detId(), row.detAmmount());
-//        expenseSubmission.setExpSubDet(expenseSubDet);
-//        expenseSubDet.setExpSub(expenseSubmission);
-//
-//        Expense expense = new Expense(row.expId(), row.expName());
-//        expenseSubDet.setExpense(expense);
-//        expense.setExpSubDet(expenseSubDet);
-
-
         Departament departament = em.find(Departament.class, row.dptId());
         if (departament == null) {
             departament = new Departament(row.dptId(), row.dptName());
@@ -110,8 +94,6 @@ public class Expenses {
         if(employee == null) {
             employee = new Employee(row.empId(), row.empName(), departament);
         }
-
-
 
         ExpenseSubmission expenseSubmission = em.find(ExpenseSubmission.class, row.subId());
         if (expenseSubmission == null) {
@@ -123,8 +105,6 @@ public class Expenses {
             expenseSubmissionDetail = new ExpensesSubmissionDetail(row.detId(), row.detAmmount());
         }
 
-
-
         Expense expense = em.find(Expense.class, row.expId());
         if (expense == null) {
             expense = new Expense(row.expId(), row.expName());
@@ -135,9 +115,6 @@ public class Expenses {
         expenseSubmissionDetail.setExpSub(expenseSubmission);
         expenseSubmissionDetail.setExpense(expense);
         expense.setExpSubDet(expenseSubmissionDetail);
-//        employee.setExpenses(expense);
-//        expense.setEmployee(employee);
-
 
         System.out.println("-------------------------------------");
         System.out.println(departament);
@@ -164,56 +141,116 @@ public class Expenses {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         EntityManager em = emf.createEntityManager();
 
-//        employeeExpenses(null, null);
-//        departmentExpenses(null, null);
+        employeeExpenses(em, 6);
+        departmentExpenses(em, 1);
 //        expenseSummary(null, null, "1900-01-01", "2100-12-31");
 
-        lectorCSV(CSV_PATH, em);
+        // lectorCSV(CSV_PATH, em);
 
         em.close();
         emf.close();
     }
 
-    private static void employeeExpenses(EntityManager em, Integer empId) {
-        System.out.printf("Employee: %3d, %s\n", 999, "Employee's Name");
-        System.out.printf("\t%d, %s\n", 999, "yyyy-mm-dd");
-        System.out.printf("\t\t%3d, %32s: %8.2f\n",
-                999,
-                "Expense Name",
-                999.99d
-        );
-        System.out.printf("\t\t%3d, %32s: %8.2f\n",
-                999,
-                "Expense Name",
-                999.99d
-        );
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTOTAL: %40.2f\n\n", 999.99d);
-        System.out.printf("\t%d, %s\n", 999, "yyyy-mm-dd");
-        System.out.printf("\t\t%3d, %32s: %8.2f\n",
-                999,
-                "Expense Name",
-                999.99d
-        );
-        System.out.printf("\t\t%3d, %32s: %8.2f\n",
-                999,
-                "Expense Name",
-                999.99d
-        );
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTOTAL: %40.2f\n\n", 999.99d);
-        System.out.printf("TOTAL: %48.2f\n", 9999.99d);
+    private static List<ExpensesSubmissionDetail> consultarDetalles(int sid, EntityManager em) {
+        List<ExpensesSubmissionDetail> expenseSubDet = em.createQuery("SELECT S FROM ExpensesSubmissionDetail S WHERE S.expSub.sid =:id", ExpensesSubmissionDetail.class)
+                .setParameter("id", sid)
+                .getResultList();
+        return expenseSubDet;
+    }
+
+    private static List<ExpenseSubmission> consultarSubmission(int empId, EntityManager em) {
+        List<ExpenseSubmission> expenseSubmissions = em.createQuery("SELECT S FROM ExpenseSubmission S WHERE S.employee.empid =:id", ExpenseSubmission.class)
+                .setParameter("id", empId)
+                .getResultList();
+        return expenseSubmissions;
+    }
+
+    private static double employeeExpenses(EntityManager em, Integer empId) {
+
+        Employee employee = em.find(Employee.class, empId);
+
+        int empleadoid = employee.getEmpid();
+        String empleadoname = employee.getEmpname();
+
+        double totalTotal = 0;
+
+        List<ExpenseSubmission> expenseSubmissions = consultarSubmission(empId, em);
+
+        // COLUMNA CON ID DE EMPLEADO Y NOMBRE DEL EMPLEADO
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.printf("Employee: %3d, %s\n", empleadoid, empleadoname);
+
+        // FILAS CON ID DE EXPENSESUBMISSION Y LA FECHA DE CADA EXPENSESUBMISSION
+        for (ExpenseSubmission expenseSubmission : expenseSubmissions) {
+            double total = 0;
+            System.out.printf("\t%d, %s\n", expenseSubmission.getSid(), expenseSubmission.getSdate());
+
+            List<ExpensesSubmissionDetail> detalles = consultarDetalles(expenseSubmission.getSid(), em);
+
+            // DE CADA EXPENSE SUBMISSION MOSTRAR SUS DETALLES
+            for (ExpensesSubmissionDetail detail : detalles) {
+
+                // MUESTRA EL ID DEL DETALLE, EL NOMBRE DE LA EXPENSA Y EL MONTO
+                System.out.printf("\t\t%3d, %32s: %8.2f\n",
+                        detail.getId(),
+                        detail.getExpense().getExpname(),
+                        detail.getAmount()
+
+                );
+                total += detail.getAmount();
+            }
+            System.out.println("\t\t===============================================");
+            System.out.printf("\t\tTOTAL: %40.2f\n\n", total);
+            totalTotal += total;
+        }
+        System.out.printf("TOTAL EMPLEADO: %48.2f\n", totalTotal);
+
+        return totalTotal;
 
     }
 
-    private static void departmentExpenses(EntityManager em, Integer dptId) {
-        System.out.printf("Department: %3d, %s\n", 999, "Department Name");
-        System.out.printf("\t\t%3d, %32s: %8.2f\n", 999, "Employee's Name", 999.99d);
-        System.out.printf("\t\t%3d, %32s: %8.2f\n", 999, "Employee's Name", 999.99d);
-        System.out.printf("\t\t%3d, %32s: %8.2f\n", 999, "Employee's Name", 999.99d);
-        System.out.println("\t\t===============================================");
-        System.out.printf("TOTAL: %48.2f\n", 9999.99d);
 
+
+    private static void departmentExpenses(EntityManager em, Integer dptId) {
+        Departament departament = em.find(Departament.class, dptId);
+        double totalDepartamento = 0;
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.printf("Department: %3d, %s\n", departament.getDid(), departament.getDname());
+
+        List<Employee> employes = consultarEmpleados(em, departament.getDid());
+
+        // RECORRO LOS EMPLEADOS
+        for (Employee employee : employes) {
+
+            double totalEmpleado = 0;
+            List<ExpenseSubmission> expenseSubmissions = consultarSubmission(employee.getEmpid(), em);
+
+            // RECORRO LOS SUBMISION DE CADA EMPLEADO
+            for (ExpenseSubmission expenseSubmission : expenseSubmissions) {
+                double totalExpense = 0;
+                List<ExpensesSubmissionDetail> detalles = consultarDetalles(expenseSubmission.getSid(), em);
+
+                // RECORRO LOS DETALLES DE CADA SUBMISION DE CADA EMPLEADO
+                for (ExpensesSubmissionDetail detail : detalles) {
+                    totalExpense += detail.getAmount();
+                }
+                totalEmpleado += totalExpense;
+            }
+
+            totalDepartamento += totalEmpleado;
+            System.out.printf("\t\t%3d, %32s: %8.2f\n", employee.getEmpid(),employee.getEmpname(), totalEmpleado);
+        }
+
+        System.out.println("\t\t===============================================");
+        System.out.printf("TOTAL DEPARTAMENTO: %48.2f\n", totalDepartamento);
+
+    }
+
+    private static List<Employee> consultarEmpleados(EntityManager em, int did) {
+         List<Employee> empleadosFilter = em.createQuery("SELECT E FROM Employee E WHERE E.departament.did = :dptid", Employee.class)
+                 .setParameter("dptid", did)
+                 .getResultList();
+         return empleadosFilter;
     }
 
     private static void expenseSummary(EntityManager em, Integer expId, String fDesde, String fHasta) {
