@@ -143,7 +143,7 @@ public class Expenses {
 
         employeeExpenses(em, 6);
         departmentExpenses(em, 1);
-//        expenseSummary(null, null, "1900-01-01", "2100-12-31");
+        expenseSummary(em, 1, "1900-01-05", "2025-01-07");
 
         // lectorCSV(CSV_PATH, em);
 
@@ -243,6 +243,7 @@ public class Expenses {
 
         System.out.println("\t\t===============================================");
         System.out.printf("TOTAL DEPARTAMENTO: %48.2f\n", totalDepartamento);
+        System.out.println("--------------------------------------------------------------------------");
 
     }
 
@@ -262,24 +263,77 @@ public class Expenses {
         }
     }
 
+    private static List<ExpenseSubmission> consultarExpByDate(EntityManager em, Date fechaDesde, Date fechaHata) {
+        ArrayList<ExpenseSubmission> expenseSubmissionFiltradas = new ArrayList<>();
+        List<ExpenseSubmission> expSubSinFiltro = em.createQuery("SELECT ES FROM ExpenseSubmission ES").getResultList();
+
+        for (ExpenseSubmission expSub : expSubSinFiltro) {
+            if (fechaDesde.compareTo(expSub.getSdate()) < 0 && fechaHata.compareTo(expSub.getSdate()) > 0) {
+                expenseSubmissionFiltradas.add(expSub);
+            }
+        }
+        return expenseSubmissionFiltradas;
+    }
+
     private static void expenseSummary(EntityManager em, Integer expId, Date fDesde, Date fHasta) {
+
+        List<ExpenseSubmission> expFiltradas = consultarExpByDate(em, fDesde, fHasta);
+        // System.out.println(expFiltradas.toString());
+
+        for (ExpenseSubmission expSub : expFiltradas) {
+            List<ExpensesSubmissionDetail> detailsFilt = consultarDetailsByExpSub( em, expSub.getSid(), expId);
+
+            //System.out.printf("\t%3d, %s\n", expSub.getEmployee().getEmpid(), expSub.getEmployee().getEmpname());
+
+            for ()
+
+            for (ExpensesSubmissionDetail detail : detailsFilt) {
+                System.out.printf("\t%3d, %s\n", expSub.getEmployee().getEmpid(), expSub.getEmployee().getEmpname());
+                System.out.println(detail);
+            }
+        }
+
+//        System.out.printf(
+//                "%d, %s, desde %s hasta %s\n",
+//                999, "Expense Name",
+//                "yyyy-mm-dd", "yyyy-mm-dd"
+//        );
+//        System.out.printf("\t%3d, %s\n", 999, "Employee's Name");
+//        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
+//        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
+//        System.out.println("\t\t===============================================");
+//        System.out.printf("\t\tTotal: %40.2f\n\n", 9999.99d); // Employee Total
+//        System.out.printf("\t%3d, %s\n", 999, "Employee's Name");
+//        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
+//        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
+//        System.out.println("\t\t===============================================");
+//        System.out.printf("\t\tTotal: %40.2f\n\n", 9999.99d); // Employee Total
+//        System.out.printf("TOTAL: %48.2f\n", 99999.99d);
+
+        Expense exp = em.find(Expense.class, expId);
+        System.out.println("----------------------------------------------------------------");
         System.out.printf(
                 "%d, %s, desde %s hasta %s\n",
-                999, "Expense Name",
-                "yyyy-mm-dd", "yyyy-mm-dd"
+                exp.getExpid(), exp.getExpname(),
+                fDesde, fHasta
         );
-        System.out.printf("\t%3d, %s\n", 999, "Employee's Name");
-        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
-        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTotal: %40.2f\n\n", 9999.99d); // Employee Total
-        System.out.printf("\t%3d, %s\n", 999, "Employee's Name");
-        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
-        System.out.printf("\t\t%s: %35.2f\n", "yyyy-mm-dd", 999.99d);
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTotal: %40.2f\n\n", 9999.99d); // Employee Total
-        System.out.printf("TOTAL: %48.2f\n", 99999.99d);
 
+
+        System.out.println("----------------------------------------------------------------");
+    }
+
+    private static List<ExpensesSubmissionDetail> consultarDetailsByExpSub(EntityManager em, int expSubDet, int expId) {
+        List<ExpensesSubmissionDetail> detailsSinFiltro = em.createQuery("SELECT esd FROM ExpensesSubmissionDetail esd WHERE esd.expSub.sid = :expId").setParameter("expId", expSubDet).getResultList();
+
+        List<ExpensesSubmissionDetail> detailsConFiltro = new ArrayList<>();
+
+        for (ExpensesSubmissionDetail expSubDetail : detailsSinFiltro) {
+            if ( expSubDetail.getExpense().getExpid() == expId ) {
+                detailsConFiltro.add(expSubDetail);
+            }
+        }
+
+        return detailsConFiltro;
     }
 
 }
