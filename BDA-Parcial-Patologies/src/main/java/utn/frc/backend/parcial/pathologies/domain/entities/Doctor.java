@@ -1,15 +1,26 @@
 package utn.frc.backend.parcial.pathologies.domain.entities;
 
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="doctor")
 public class Doctor {
+    @Id
+    @Column(name="did")
     private int did;
 
+    @Column(name="dname")
     private String dname;
 
+    @ManyToOne
+    @JoinColumn(name="hid")
     private Hospital hospital;
 
+
+    @OneToMany(mappedBy = "doctor")
     private List<Report> reports = new ArrayList<Report>();
 
     public Doctor() {

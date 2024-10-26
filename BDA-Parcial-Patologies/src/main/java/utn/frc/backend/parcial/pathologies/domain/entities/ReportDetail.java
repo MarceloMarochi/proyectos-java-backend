@@ -1,12 +1,23 @@
 package utn.frc.backend.parcial.pathologies.domain.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="report_details")
 public class ReportDetail {
+    @Id
+    @Column(name="rdid")
     private int rdid;
 
+    @Column(name="cases")
     private int cases;
 
+    @ManyToOne
+    @JoinColumn(name="rid")
     private Report report;
 
+    @ManyToOne
+    @JoinColumn(name="pid")
     private Pathology pathology;
 
     public ReportDetail() {

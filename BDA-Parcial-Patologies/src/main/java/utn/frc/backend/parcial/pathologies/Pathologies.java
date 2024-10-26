@@ -21,10 +21,10 @@ public class Pathologies {
     private static final int REPORT_ID_INDEX = 4, REPORT_DATE_INDEX = 5;
     private static final int PATHOLOGY_ID_INDEX = 7, PATHOLOGY_NAME_INDEX = 8;
     private static final int DET_ID_INDEX = 6, CASES_INDEX = 9;
-    private static final String PERSISTENCE_UNIT_NAME = "h2PathPU";
+    private static final String PERSISTENCE_UNIT_NAME = "paatologies";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
-    private static final String filePath = "D:\\Documents\\INGIENERÍA EN SISTEMAS\\3° Año\\BACKEND\\proyectos-java-backend\\BDA-Parcial-Patologies\\src\\main\\resources\\pathologies\\Pathologies.csv";
+    private static final String filePath = "D:\\Documentos\\INGENIERÍA EN SISTEMAS\\3° Año\\BACKEND\\Proyectos\\BDA-Parcial-Patologies\\src\\main\\resources\\pathologies\\Pathologies.csv";
 
     record CsvRow(
             Integer did, String dname, Integer hid, String hname,
@@ -56,7 +56,7 @@ public class Pathologies {
         );
     };
 
-    public static void lectorCsv(String fpath, String em) {
+    public static void lectorCsv(String fpath, EntityManager em) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(fpath))) {
             String line;
@@ -79,94 +79,154 @@ public class Pathologies {
         }
     }
 
-    private static void crearInstancia(CsvRow row, String em) {
-        // em.getTransaction().begin();
+    private static void crearInstancia(CsvRow row, EntityManager em) {
 
-        Hospital hospital = new Hospital(row.hid(), row.hname());
-        Doctor doctor = new Doctor(row.did(), row.dname(), hospital);
+        em.getTransaction().begin();
+
+
+        Hospital hospital = em.find(Hospital.class, row.hid());
+        if (hospital == null) {
+            hospital = new Hospital(row.hid(), row.hname());
+        }
+
+        Doctor doctor = em.find(Doctor.class, row.did());
+        if (doctor == null) {
+            doctor = new Doctor(row.did(), row.dname(), hospital);
+        }
         hospital.setDoctors(doctor);
 
-        Report report = new Report(row.rid(),doctor, row.rdate());
+        Report report = em.find(Report.class, row.rid());
+        if (report == null) {
+            report = new Report(row.rid(),doctor, row.rdate());
+        }
 
-        Pathology patology = new Pathology(row.pid(), row.pname());
 
-        ReportDetail reportDetail = new ReportDetail(row.rdid(), row.cases(), report,patology);
+        Pathology patology = em.find(Pathology.class, row.pid());
+        if (patology == null) {
+            patology = new Pathology(row.pid(), row.pname());
+        }
 
-        System.out.println(hospital);
-        System.out.println(doctor);
-        System.out.println(report);
-        System.out.println(patology);
-        System.out.println(reportDetail);
+        ReportDetail reportDetail = em.find(ReportDetail.class, row.rdid());
+        if (reportDetail == null) {
+            reportDetail = new ReportDetail(row.rdid(), row.cases(), report, patology);
+        }
 
-//        try {
-//            em.persist(hospital);
-//            em.persist(doctor);
-//            em.persist(report);
-//            em.persist(reportDetail);
-//            em.persist(patology);
-//        } catch (PersistenceException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        em.getTransaction().commit();
+//        System.out.println(hospital);
+//        System.out.println(doctor);
+//        System.out.println(report);
+//        System.out.println(patology);
+//        System.out.println(reportDetail);
+
+        try {
+            em.persist(hospital);
+            em.persist(doctor);
+            em.persist(report);
+            em.persist(reportDetail);
+            em.persist(patology);
+        } catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        }
+
+        em.getTransaction().commit();
 
     }
 
     public static void main(String[] args) throws Exception {
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-//        EntityManager em = emf.createEntityManager();
-        String em = "";
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        EntityManager em = emf.createEntityManager();
+
+
         lectorCsv(filePath, em);
 
-//        hospitalCases(null, null);
-//        doctorCases(null, null);
+        hospitalCases(em, 25);
+        doctorCases(em, 1);
 //        pathologySummary(null, null, "1900-01-01", "2100-12-31");
 
-//        em.close();
-//        emf.close();
+        em.close();
+        emf.close();
     }
 
     private static void hospitalCases(EntityManager em, Integer hid) {
-        System.out.printf("Hospital: %d, %s\n", 999, "Hospital's Name");
         System.out.println("-------------------------------------------------------");
-        System.out.printf("\t\t%3d, %36s: %4d\n", 999, "Doctor's Name", 9999);
-        System.out.printf("\t\t%3d, %36s: %4d\n", 999, "Doctor's Name", 9999);
-        System.out.printf("\t\t%3d, %36s: %4d\n", 999, "Doctor's Name", 9999);
+        System.out.println("            PUNTO 1");
+        System.out.println("-------------------------------------------------------");
+
+        Hospital hospital = em.find(Hospital.class, hid);
+        System.out.printf("Hospital: %d, %s\n", hid, hospital.getHname());
+        System.out.println("-------------------------------------------------------");
+
+        List<Doctor> doctorXHospital = buscarDoctoresPorHospital(em, hid);
+
+        int totalHospital = 0;
+
+        for (Doctor doctor : doctorXHospital) {
+          int contadorXReporte = 0;
+          List<Report> reportXDoctor = buscarReportesPorDoctor(em, doctor.getDid());
+
+          for (Report repor : reportXDoctor) {
+
+              List<ReportDetail> detalles = buscarDetallesPorReporte(em, repor.getRid());
+              for (ReportDetail detail : detalles) {
+                  contadorXReporte += detail.getCases();
+              }
+
+          }
+          totalHospital += contadorXReporte;
+          System.out.printf("\t\t%3d, %36s: %4d\n", doctor.getDid(), doctor.getDname(), contadorXReporte);
+        }
+
         System.out.println("\t\t===============================================");
-        System.out.printf("TOTAL: %48d\n\n", 99999);
+        System.out.printf("TOTAL DE CASOS DEL HOSPITAL: %25d\n\n", totalHospital);
+
     }
 
-    private static void doctorCases(EntityManager em, Integer did) {
-        System.out.printf("Doctor: %d, %s\n", 999, "Doctor's Name");
-        System.out.println("-------------------------------------------------------");
-        System.out.printf("\t%d, %s\n", 999, "yyyy-mm-dd");
-        System.out.printf("\t\t%3d, %36s: %4d\n",
-                999,
-                "Pathology name",
-                9999
-        );
-        System.out.printf("\t\t%3d, %36s: %4d\n",
-                999,
-                "Pathology name",
-                9999
-        );
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTOTAL: %40d\n\n", 9999);
-        System.out.printf("\t%d, %s\n", 999, "yyyy-mm-dd");
-        System.out.printf("\t\t%3d, %36s: %4d\n",
-                999,
-                "Pathology name",
-                9999
-        );
-        System.out.printf("\t\t%3d, %36s: %4d\n",
-                999,
-                "Pathology name",
-                9999
-        );
-        System.out.println("\t\t===============================================");
-        System.out.printf("\t\tTOTAL: %40d\n\n", 9999);
-        System.out.printf("TOTAL: %48d\n\n", 99999);
+    private static List<Doctor> buscarDoctoresPorHospital(EntityManager em, Integer hid) {
+        return em.createQuery("SELECT D FROM Doctor D WHERE D.hospital.hid=:id", Doctor.class).setParameter("id", hid).getResultList();
     }
+
+    private static List<Report> buscarReportesPorDoctor(EntityManager em, int did) {
+        return em.createQuery("SELECT R FROM Report R WHERE R.doctor.did=:id", Report.class).setParameter("id", did).getResultList();
+    }
+
+    private static List<ReportDetail> buscarDetallesPorReporte(EntityManager em, int rid) {
+        return em.createQuery("SELECT R FROM ReportDetail R WHERE R.report.rid=:id", ReportDetail.class).setParameter("id", rid).getResultList();
+    }
+
+
+    private static void doctorCases(EntityManager em, Integer did) {
+        System.out.println("-------------------------------------------------------");
+        System.out.println("            PUNTO 2");
+        System.out.println("-------------------------------------------------------");
+
+        Doctor doctor = em.find(Doctor.class, did);
+
+        System.out.printf("Doctor: %d, %s\n", doctor.getDid(), doctor.getDname());
+        System.out.println("-------------------------------------------------------");
+
+        List<Report> reportesXDoctor = buscarReportesPorDoctor(em, did);
+        int totalDoctor = 0;
+
+        for (Report repo : reportesXDoctor) {
+            int totalReport = 0;
+            System.out.printf("\t%d, %s\n", repo.getRid(), repo.getRdate());
+
+            List<ReportDetail> details = buscarDetallesPorReporte(em, repo.getRid());
+
+            for (ReportDetail deta : details) {
+                System.out.printf("\t\t%3d, %36s: %4d\n",
+                        deta.getPathology().getPid(),
+                        deta.getPathology().getPname(),
+                        deta.getCases()
+                );
+                totalReport += deta.getCases();
+            }
+            System.out.println("\t\t===============================================");
+            System.out.printf("\t\tTOTAL: %40d\n\n", totalReport);
+            totalDoctor += totalReport;
+        }
+        System.out.printf("TOTAL: %48d\n\n", totalDoctor);
+    }
+
 
     private static void pathologySummary(EntityManager em, Integer pid, String fDesde, String fHasta) {
         DateFormat format = new SimpleDateFormat(DATE_FORMAT);
