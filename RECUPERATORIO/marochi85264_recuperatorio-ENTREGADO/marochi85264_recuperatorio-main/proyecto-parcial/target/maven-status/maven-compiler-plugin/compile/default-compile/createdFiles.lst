@@ -1,0 +1,9 @@
+utnfc\isi\backend\parcial\entities\Moneda.class
+utnfc\isi\backend\parcial\entities\Empleado.class
+utnfc\isi\backend\parcial\entities\Cuenta.class
+utnfc\isi\backend\parcial\entities\Compania.class
+utnfc\isi\backend\parcial\OperacionesLoaderCsv.class
+utnfc\isi\backend\parcial\services\OperacionesService.class
+utnfc\isi\backend\parcial\Main.class
+utnfc\isi\backend\parcial\entities\Operador_Tarjeta.class
+utnfc\isi\backend\parcial\Prueba.class
